@@ -1,37 +1,54 @@
 # 🥷 Desafio 1: Ninjas de Konoha - Java.10x
 
-[cite_start]Este projeto faz parte do desafio prático de Java, focado na manipulação de variáveis, tipos de dados e lógica condicional[cite: 2, 3]. [cite_start]O objetivo é gerenciar as informações e o status de missões de três ninjas da Vila da Folha[cite: 8].
+Este projeto faz parte do desafio prático de Java, com foco em variáveis, tipos de dados e lógica condicional.
+O objetivo é gerenciar as informações e o status das missões de três ninjas da Vila da Folha.
 
 ## 📋 Descrição do Projeto
 
-[cite_start]O programa representa três ninjas lendários, armazenando dados fundamentais e validando se eles estão aptos a concluir suas missões com base em regras específicas de idade e nível de dificuldade[cite: 9, 12].
+O programa representa três ninjas lendários e valida se eles podem concluir suas missões com base em regras de idade e ranking.
 
-### Dados Gerenciados:
-* [cite_start]**Identificação:** Nome do Ninja[cite: 9].
-* [cite_start]**Idade:** Idade do personagem[cite: 9].
-* [cite_start]**Missão:** Nome da missão, nível de dificuldade e status de conclusão[cite: 9].
+### Dados gerenciados
+- **Nome** do ninja
+- **Idade**
+- **Nome da missão**
+- **Ranking da missão** (`char`)
+- **Status da missão** (`Concluída` ou `Não concluída`)
 
 ## ⚙️ Regras de Negócio (Lógica de Missão)
 
-[cite_start]Para aumentar a dificuldade do desafio, foi implementada uma lógica de verificação baseada na idade do ninja[cite: 11, 12]:
+1. **Ninjas menores de 15 anos:**
+    - Só podem concluir missões de ranking **C** ou **D**.
+2. **Ninjas com 15 anos ou mais:**
+    - Podem concluir missões de **qualquer ranking**.
+3. **Status automático:**
+    - O status é atualizado conforme as regras acima.
 
-1.  [cite_start]**Ninjas menores de 15 anos:** Só podem concluir missões de nível **C** ou **D**[cite: 14].
-2.  [cite_start]**Ninjas com 15 anos ou mais:** Estão autorizados a concluir missões de **qualquer nível**[cite: 14].
-3.  [cite_start]**Atualização de Status:** O sistema altera automaticamente o status da missão para "Concluída" ou "Não concluída" após validar estas condições[cite: 13, 15].
+## ✅ Atualizações aplicadas no código
+
+- Assinatura do método principal corrigida para o padrão Java:
+    - `public static void main(String[] args)`
+- Ajuste e simplificação de lógica em versão anterior:
+    - `missaoConcluida1 = idadeNinja1 >= 18;`
+- Compilação e execução validadas com sucesso no terminal.
 
 ## 🛠️ Tecnologias e Conceitos Aplicados
 
-* [cite_start]**Tipos de Dados:** Utilização de `String`, `int` e outros tipos primitivos[cite: 4].
-* [cite_start]**Variáveis:** Declaração e atribuição de valores para representar os atributos dos ninjas[cite: 5].
-* [cite_start]**Saída de Dados:** Exibição de informações no console através de `System.out.println`[cite: 6].
-* [cite_start]**Condicionais:** Estruturas `if/else` para validação das regras de missão[cite: 12].
+- `String`, `int`, `char`, `boolean`
+- Declaração e atribuição de variáveis
+- Estruturas condicionais `if/else`
+- Operadores lógicos (`||`)
+- Saída no console com `System.out.println`
+- Organização por pacote Java (`package NivelIntermediario`)
 
 ## 🚀 Como executar
 
-1. Certifique-se de ter o JDK instalado.
-2. Copie o código para um arquivo chamado `Main.java`.
-3. Compile o código: `javac Main.java`.
-4. Execute o programa: `java Main`.
+No PowerShell, na raiz do projeto:
 
----
-[cite_start]*Este desafio segue as diretrizes da trilha Java.10x[cite: 2].*
+```powershell
+javac -d out\production\ninjasLendarios src\NivelIntermediario\Main.java
+java -cp out\production\ninjasLendarios NivelIntermediario.Main
+📌 Observações
+•
+Projeto em fase de aprendizado, com possibilidade de refatoração para reduzir repetição.
+•
+Exemplo de melhoria futura: criar um método para validar missão e reaproveitar para todos os ninjas.
